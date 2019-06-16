@@ -27,9 +27,9 @@ namespace EditorDevFolder
             HarmonyInstance harmony = HarmonyInstance.Create("com.REHERC.EditorDevFolder");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
-            manager.Menus.AddMenu(MenuDisplayMode.MainMenu, new MenuTree("editordevmode.main", "LEVEL EDITOR DEV MODE")
+            manager.Menus.AddMenu(MenuDisplayMode.MainMenu, new MenuTree("editordevmode.main", "LEVEL EDITOR DEVELOPER MODE")
             {
-                new CheckBox(MenuDisplayMode.MainMenu, "editordevmode.main.enable", "ENABLE DEVLOPPER FOLDER")
+                new CheckBox(MenuDisplayMode.MainMenu, "editordevmode.main.enable", "ENABLE DEV FOLDER")
                 .WithGetter(() => (bool)Configuration["DevFolderEnabled"])
                 .WithSetter((value) => {
                     Configuration["DevFolderEnabled"] = value;
