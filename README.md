@@ -1,5 +1,5 @@
 # Editor Dev Folder
-> **A Spectrum plugin that enables the level editor Dev folder**
+> **Enables the level editor Dev folder and allows to open workshop levels**
 ![Repository logo](repository_thumbnail.png)
 
 # Download the mod
