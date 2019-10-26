@@ -16,7 +16,11 @@ namespace EditorDevFolder
     public class Plugin : IPlugin
     {
         public static Settings Configuration = new Settings("Config");
-        public static Spectrum.API.Logging.Logger Log = new Spectrum.API.Logging.Logger("Log");
+        public static Spectrum.API.Logging.Logger Log = new Spectrum.API.Logging.Logger("Log")
+        {
+            WriteToConsole = true,
+            ColorizeLines = true
+        };
 
         public void Initialize(IManager manager, string ipcIdentifier)
         {
@@ -24,7 +28,8 @@ namespace EditorDevFolder
             {
                 {"DevFolderEnabled", false},
                 {"AdvancedMusicSelection", false},
-                {"OpenWorkshopLevels", false}
+                {"OpenWorkshopLevels", false},
+                {"EditorIconSize", 67f}
             })
                 if (!Configuration.ContainsKey<string>(item.Key))
                     Configuration[item.Key] = item.Value;
@@ -74,6 +79,16 @@ namespace EditorDevFolder
         [HarmonyPrefix]
         public static bool Prefix (LibraryTab __instance)
         {
+            __instance.iconSizeSlider_.onChange.Add(new EventDelegate(() => {
+                Plugin.Configuration["EditorIconSize"] = __instance.IconSize_;
+                Plugin.Configuration.Save();
+
+                Plugin.Log.Info("iconSizeSlider_.onChange");
+            }));
+
+            if (Plugin.Configuration.ContainsKey("EditorIconSize"))
+                __instance.iconSize_ = Plugin.Configuration.GetItem<float>("EditorIconSize");
+
             __instance.rootFileData_ = G.Sys.ResourceManager_.LevelPrefabFileInfosRoot_;
             if (Plugin.Configuration["DevFolderEnabled"] is false)
                 __instance.rootFileData_.RemoveAllChildInfos((LevelPrefabFileInfo x) => x.IsDirectory_ && x.Name_ == "Dev");
@@ -85,7 +100,7 @@ namespace EditorDevFolder
         }
     }
 
-    [HarmonyPatch(typeof(SelectMusicTrackNameFromListTool), "StartTool")]
+    //[HarmonyPatch(typeof(SelectMusicTrackNameFromListTool), "StartTool")]
     public class SelectMusicTrackNameFromListTool__StartTool__Patch
     {
         static void Prefix(SelectMusicTrackNameFromListTool __instance)
