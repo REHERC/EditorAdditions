@@ -39,7 +39,7 @@ namespace EditorAdditions
 
             Configuration.Save();
 
-            manager.Menus.AddMenu(MenuDisplayMode.MainMenu, new MenuTree("editordevmode.main", "LEVEL EDITOR DEVELOPER MODE")
+            manager.Menus.AddMenu(MenuDisplayMode.MainMenu, new MenuTree("editordevmode.main", "LEVEL EDITOR ADDITIONS")
             {
                 new CheckBox(MenuDisplayMode.MainMenu, "editordevmode.main.enable", "ENABLE DEV FOLDER")
                 .WithGetter(() => (bool)Configuration["DevFolderEnabled"])
