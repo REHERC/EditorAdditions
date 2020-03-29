@@ -63,6 +63,7 @@
     <Compile Include="Harmony\global\LevelEditorLevelNameSelectMenuLogic\Show.cs" />
     <Compile Include="Harmony\global\LevelEditorMusicTrackSelectMenuLogic\GenerateMusicNameList.cs" />
     <Compile Include="Harmony\global\LibraryTab\Start.cs" />
+    <Compile Include="Harmony\global\ResourceManager\SetupPrefabFileDatas.cs" />
     <Compile Include="Harmony\global\SelectMusicTrackNameFromListTool\AddEntries.cs" />
     <Compile Include="Harmony\global\SelectMusicTrackNameFromListTool\StartTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
