@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorAdditions", "EditorAdditions\EditorAdditions.csproj", "{44758298-CD3E-430A-8EFC-8FE5DBE58389}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Include", "Include", "{37025078-C35A-44FE-86A9-A13890BED7C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spectrum", "Spectrum", "{9B875B48-A075-4825-A2E4-05ABC83593DA}"
+	ProjectSection(SolutionItems) = preProject
+		Include\Spectrum\plugin.json = Include\Spectrum\plugin.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{D737030F-0AE5-4FC5-85AB-CA51436A494B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+		repository_thumbnail.png = repository_thumbnail.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Referenced Assemblies", "Referenced Assemblies", "{34433603-6195-40BE-B245-0925A182047C}"
+	ProjectSection(SolutionItems) = preProject
+		Referenced Assemblies\Assembly-CSharp-firstpass.dll = Referenced Assemblies\Assembly-CSharp-firstpass.dll
+		Referenced Assemblies\Assembly-CSharp.dev.dll = Referenced Assemblies\Assembly-CSharp.dev.dll
+		Referenced Assemblies\Spectrum.API.dll = Referenced Assemblies\Spectrum.API.dll
+		Referenced Assemblies\UnityEngine.dll = Referenced Assemblies\UnityEngine.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44758298-CD3E-430A-8EFC-8FE5DBE58389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44758298-CD3E-430A-8EFC-8FE5DBE58389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44758298-CD3E-430A-8EFC-8FE5DBE58389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44758298-CD3E-430A-8EFC-8FE5DBE58389}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9B875B48-A075-4825-A2E4-05ABC83593DA} = {37025078-C35A-44FE-86A9-A13890BED7C2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10C9EE71-4DC1-473B-AD0C-09A9770EE229}
+	EndGlobalSection
+EndGlobal

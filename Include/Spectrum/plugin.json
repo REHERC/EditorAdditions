@@ -1,0 +1,12 @@
+{
+  "FriendlyName": "Level Editor Additions",
+  "Author": "Reherc",
+  "AuthorContact": "Github: @REHERC",
+  "CompatibleAPILevel": 6,
+  "IPCIdentifier": "EditorAdditions",
+  "ModuleFileName": "EditorAdditions.dll",
+  "EntryClassName": "Plugin",
+  "Priority": 10,
+  "Dependencies": [],
+  "SkipLoad": false
+}

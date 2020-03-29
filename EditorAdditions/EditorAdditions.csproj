@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44758298-CD3E-430A-8EFC-8FE5DBE58389}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EditorAdditions</RootNamespace>
+    <AssemblyName>EditorAdditions</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.1.2.0.1\lib\net35\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\Referenced Assemblies\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp.dev">
+      <HintPath>..\Referenced Assemblies\Assembly-CSharp.dev.dll</HintPath>
+    </Reference>
+    <Reference Include="Spectrum.API">
+      <HintPath>..\Referenced Assemblies\Spectrum.API.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\Referenced Assemblies\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entry.cs" />
+    <Compile Include="Harmony\global\AudioManager\MusicCue\ctor.cs" />
+    <Compile Include="Harmony\global\LevelEditorLevelNameSelectMenuLogic\GenerateLevelNameList.cs" />
+    <Compile Include="Harmony\global\LevelEditorLevelNameSelectMenuLogic\Show.cs" />
+    <Compile Include="Harmony\global\LevelEditorMusicTrackSelectMenuLogic\GenerateMusicNameList.cs" />
+    <Compile Include="Harmony\global\LibraryTab\Start.cs" />
+    <Compile Include="Harmony\global\SelectMusicTrackNameFromListTool\AddEntries.cs" />
+    <Compile Include="Harmony\global\SelectMusicTrackNameFromListTool\StartTool.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>SET INCLUDE=$(SolutionDir)Include\
+SET BUILD=$(ProjectDir)$(OutDir)
+SET PACKAGES=$(SolutionDir)Build\Editor Additions - Spectrum API\
+
+CALL :MAKEDIR "%25PACKAGES%25"
+CALL :MAKEDIR "%25PACKAGES%25\Dependencies"
+
+CALL :COPY "%25INCLUDE%25\Spectrum\plugin.json" "%25PACKAGES%25"
+CALL :COPY "%25BUILD%25EditorAdditions.dll" "%25PACKAGES%25"
+CALL :COPY "%25BUILD%250Harmony.dll" "%25PACKAGES%25\Dependencies"
+
+EXIT 0
+
+:MAKEDIR
+IF NOT EXIST %251 MKDIR %251
+GOTO :EOF
+
+:COPY
+XCOPY /s /Y /v %251 %252
+GOTO :EOF</PostBuildEvent>
+  </PropertyGroup>
+</Project>
