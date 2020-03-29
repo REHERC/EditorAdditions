@@ -1,5 +1,5 @@
 # Editor Additions
-> **Enables the level editor Dev folder and allows to open workshop levels**
+> **Enables the level editor Dev folder, adds custom object sub folders detection and allows to open workshop levels**
 ![Repository logo](repository_thumbnail.png)
 
 # Download the mod
