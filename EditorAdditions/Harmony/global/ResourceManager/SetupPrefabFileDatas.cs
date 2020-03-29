@@ -23,7 +23,6 @@ namespace EditorAdditions.Harmony
 				AddSubfoldersRecursive(CustomObjects, __instance.customObjectFileInfosRoot_);
 			}
 
-
 			string path = Application.dataPath + "/Resources/LevelEditorPrefabDirectoryInfo.xml";
 			XmlDeserializer xmlDeserializer = new XmlDeserializer(path);
 			while (xmlDeserializer.Read("LevelEditorPrefabDirectoryInformation"))
