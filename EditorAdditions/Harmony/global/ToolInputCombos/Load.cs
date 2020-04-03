@@ -1,0 +1,47 @@
+﻿using EditorAdditions.Attributes;
+using Harmony;
+using LevelEditorTools;
+using System;
+
+namespace EditorAdditions.Harmony
+{
+    [HarmonyPatch(typeof(ToolInputCombos), "Load")]
+    internal static class LoadToolInputCombos
+    {
+        internal static void Postfix(ref ToolInputCombos __result, ref string fileName)
+        {
+            switch (fileName)
+            {
+                case "BlenderToolInputCombos":  // Scheme A
+                    AddCustomHotkeys(ref __result, 'A');
+                    break;
+                case "UnityToolInputCombos":    // Scheme B
+                    AddCustomHotkeys(ref __result, 'B');
+                    break;
+            }
+        }
+
+        internal static void AddCustomHotkeys(ref ToolInputCombos __result, char scheme)
+        {
+            foreach (Type tooltype in typeof(ToolKeyboardShortcutAttribute).Assembly.GetTypes())
+            {
+                if (!tooltype.IsSubclassOf(typeof(LevelEditorTool)))
+                {
+                    continue;
+                }
+
+                LevelEditorTool instance = Activator.CreateInstance(tooltype) as LevelEditorTool;
+
+                foreach (var attribute in tooltype.GetCustomAttributes(true))
+                {
+                    switch (attribute)
+                    {
+                        case ToolKeyboardShortcutAttribute input:
+                            __result.Add(input.Get(scheme).ToString(), instance.Info_.Name_);
+                            break;
+                    }
+                }
+            }
+        }
+    }
+}
