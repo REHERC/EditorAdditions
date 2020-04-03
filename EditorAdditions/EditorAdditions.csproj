@@ -75,6 +75,7 @@
     <Compile Include="Harmony\global\SelectMusicTrackNameFromListTool\AddEntries.cs" />
     <Compile Include="Harmony\global\SelectMusicTrackNameFromListTool\StartTool.cs" />
     <Compile Include="Harmony\global\ToolInputCombos\Load.cs" />
+    <Compile Include="Harmony\global\TransformWrapper\Visit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\View\Quick Select\Instances\QuickMemory.cs">
       <AutoGen>True</AutoGen>
