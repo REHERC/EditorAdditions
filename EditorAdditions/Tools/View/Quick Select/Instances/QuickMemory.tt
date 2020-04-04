@@ -31,7 +31,7 @@ namespace EditorAdditions.Tools.View.Quick_Select
         [ToolKeyboardShortcut("SHIFT+ALPHA<#= mem #>")]
         public class LoadMemory1 : LoadSelectionToolBase
         {
-            internal static new ToolInfo info_ => new ToolInfo("Load Selection <#= mem #>", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, <#= mem * 10 + 1105 #>);
+            internal static new ToolInfo info_ => new ToolInfo("Load Selection <#= mem #>", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, <#= mem * 10 + 1200 #>);
 
             public override ToolInfo Info_ => info_;
 

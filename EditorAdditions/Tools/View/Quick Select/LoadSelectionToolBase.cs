@@ -1,5 +1,6 @@
-﻿#pragma warning disable IDE1006
+﻿#pragma warning disable IDE1006, CA1031
 using LevelEditorTools;
+using System;
 using UnityEngine;
 
 namespace EditorAdditions.Tools.View.Quick_Select
@@ -17,12 +18,19 @@ namespace EditorAdditions.Tools.View.Quick_Select
 
         public override bool Run()
         {
-            GameObject instance = EditorToolset.GetQuickMemory(QuickAccessIndex);
-            if (instance)
+            try
             {
-                EditorToolset.Inspect(instance);
+                GameObject instance = EditorToolset.GetQuickMemory(QuickAccessIndex);
+                if (instance)
+                {
+                    EditorToolset.Inspect(instance);
+                }
+                return true;
             }
-            return true;
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

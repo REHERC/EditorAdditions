@@ -26,7 +26,7 @@ namespace EditorAdditions.Tools.View.Quick_Select
         [ToolKeyboardShortcut("SHIFT+ALPHA1")]
         public class LoadMemory1 : LoadSelectionToolBase
         {
-            internal static new ToolInfo info_ => new ToolInfo("Load Selection 1", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1115);
+            internal static new ToolInfo info_ => new ToolInfo("Load Selection 1", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1210);
 
             public override ToolInfo Info_ => info_;
 
@@ -60,7 +60,7 @@ namespace EditorAdditions.Tools.View.Quick_Select
         [ToolKeyboardShortcut("SHIFT+ALPHA2")]
         public class LoadMemory1 : LoadSelectionToolBase
         {
-            internal static new ToolInfo info_ => new ToolInfo("Load Selection 2", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1125);
+            internal static new ToolInfo info_ => new ToolInfo("Load Selection 2", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1220);
 
             public override ToolInfo Info_ => info_;
 
@@ -94,7 +94,7 @@ namespace EditorAdditions.Tools.View.Quick_Select
         [ToolKeyboardShortcut("SHIFT+ALPHA3")]
         public class LoadMemory1 : LoadSelectionToolBase
         {
-            internal static new ToolInfo info_ => new ToolInfo("Load Selection 3", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1135);
+            internal static new ToolInfo info_ => new ToolInfo("Load Selection 3", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1230);
 
             public override ToolInfo Info_ => info_;
 
@@ -128,7 +128,7 @@ namespace EditorAdditions.Tools.View.Quick_Select
         [ToolKeyboardShortcut("SHIFT+ALPHA4")]
         public class LoadMemory1 : LoadSelectionToolBase
         {
-            internal static new ToolInfo info_ => new ToolInfo("Load Selection 4", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1145);
+            internal static new ToolInfo info_ => new ToolInfo("Load Selection 4", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1240);
 
             public override ToolInfo Info_ => info_;
 
@@ -162,7 +162,7 @@ namespace EditorAdditions.Tools.View.Quick_Select
         [ToolKeyboardShortcut("SHIFT+ALPHA5")]
         public class LoadMemory1 : LoadSelectionToolBase
         {
-            internal static new ToolInfo info_ => new ToolInfo("Load Selection 5", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1155);
+            internal static new ToolInfo info_ => new ToolInfo("Load Selection 5", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1250);
 
             public override ToolInfo Info_ => info_;
 
@@ -196,7 +196,7 @@ namespace EditorAdditions.Tools.View.Quick_Select
         [ToolKeyboardShortcut("SHIFT+ALPHA6")]
         public class LoadMemory1 : LoadSelectionToolBase
         {
-            internal static new ToolInfo info_ => new ToolInfo("Load Selection 6", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1165);
+            internal static new ToolInfo info_ => new ToolInfo("Load Selection 6", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1260);
 
             public override ToolInfo Info_ => info_;
 
@@ -230,7 +230,7 @@ namespace EditorAdditions.Tools.View.Quick_Select
         [ToolKeyboardShortcut("SHIFT+ALPHA7")]
         public class LoadMemory1 : LoadSelectionToolBase
         {
-            internal static new ToolInfo info_ => new ToolInfo("Load Selection 7", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1175);
+            internal static new ToolInfo info_ => new ToolInfo("Load Selection 7", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1270);
 
             public override ToolInfo Info_ => info_;
 
@@ -264,7 +264,7 @@ namespace EditorAdditions.Tools.View.Quick_Select
         [ToolKeyboardShortcut("SHIFT+ALPHA8")]
         public class LoadMemory1 : LoadSelectionToolBase
         {
-            internal static new ToolInfo info_ => new ToolInfo("Load Selection 8", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1185);
+            internal static new ToolInfo info_ => new ToolInfo("Load Selection 8", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1280);
 
             public override ToolInfo Info_ => info_;
 
@@ -298,7 +298,7 @@ namespace EditorAdditions.Tools.View.Quick_Select
         [ToolKeyboardShortcut("SHIFT+ALPHA9")]
         public class LoadMemory1 : LoadSelectionToolBase
         {
-            internal static new ToolInfo info_ => new ToolInfo("Load Selection 9", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1195);
+            internal static new ToolInfo info_ => new ToolInfo("Load Selection 9", "Inspects the object saved into the memory.", ToolCategory.View, ToolButtonState.Button, false, 1290);
 
             public override ToolInfo Info_ => info_;
 

@@ -25,6 +25,11 @@ namespace EditorAdditions
             }
         }
 
+        public static void ClearQuickMemory()
+        {
+            QuickSelectMemory.Clear();
+        }
+
         public static void Inspect(GameObject Target)
         {
             NGUIObjectInspectorTab Inspector = Object.FindObjectOfType<NGUIObjectInspectorTab>();
@@ -33,6 +38,14 @@ namespace EditorAdditions
 
             if (Editor && Inspector)
             {
+                Editor.ClearOutlines();
+                Editor.SelectedObjects_.Clear();
+                //Editor.SelectedObjects_.Add(Target.Root());
+                Editor.SelectedObjects_.Add(Target);
+                Editor.AddOutline(Target.Root());
+                Editor.AddOutline(Target);
+                Editor.UpdateOutlines();
+
                 Editor.activeObject_ = Target;
                 Inspector.targetObject_ = Target;
                 Inspector.ClearComponentInspectors();
@@ -41,6 +54,37 @@ namespace EditorAdditions
                 Inspector.propertiesNeedToBeUpdated_ = false;
                 Inspector.objectNameLabel_.text = Inspector.targetObject_.GetDisplayName();
             }
+        }
+
+        public static void InspectRoot()
+        {
+            var Editor = G.Sys.LevelEditor_;
+            GameObject selection = Editor.activeObject_;
+
+            if (Editor && selection)
+            {
+                Inspect(selection.Root());
+                Editor.ClearSelectedList();
+                Editor.SelectObject(selection.Root());
+            }
+        }
+
+        public static bool IsSelectionRoot()
+        {
+            GameObject selection = G.Sys.LevelEditor_.activeObject_;
+            if (selection)
+            {
+                return selection.transform.IsRoot();
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static void PrintToolInspectionStackError()
+        {
+            G.Sys.MenuPanelManager_.ShowError("You can't run this tool while inspecting a group stack.\nPlease select a root level object.", "ERROR");
         }
     }
 }

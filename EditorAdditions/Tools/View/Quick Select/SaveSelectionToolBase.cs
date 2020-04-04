@@ -17,10 +17,10 @@ namespace EditorAdditions.Tools.View.Quick_Select
         public override bool Run()
         {
             var Editor = G.Sys.LevelEditor_;
-            var Selection = Editor.SelectedObjects_;
-            if (Selection.Count == 1)
+            var Selection = Editor.activeObject_;
+            if (Selection)
             {
-                EditorToolset.SetQuickMemory(QuickAccessIndex, Selection[0]);
+                EditorToolset.SetQuickMemory(QuickAccessIndex, Selection);
             }
             else
             {
