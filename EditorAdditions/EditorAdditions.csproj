@@ -95,6 +95,7 @@
     <Compile Include="Tools\View\Quick Select\SaveSelectionToolBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Harmony\global\SelectionGroupData\ctor.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

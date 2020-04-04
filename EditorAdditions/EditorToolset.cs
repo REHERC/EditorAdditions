@@ -40,7 +40,6 @@ namespace EditorAdditions
             {
                 Editor.ClearOutlines();
                 Editor.SelectedObjects_.Clear();
-                //Editor.SelectedObjects_.Add(Target.Root());
                 Editor.SelectedObjects_.Add(Target);
                 Editor.AddOutline(Target.Root());
                 Editor.AddOutline(Target);
